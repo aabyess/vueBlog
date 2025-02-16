@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Vuelog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,11 +23,31 @@
     </div>
   </div>
 </nav>
+
+<router-link to="/list">리스트 페이지</router-link>
+<router-link to="/">홈페이지</router-link>
+<router-view :블로그글 ="블로그글"></router-view>
+
+<!-- <list :블로그글 ="블로그글"/> -->
+
+
 </template>
 
 <script>
-export default {
+import List from './components/List.vue';
+import blog from './assets/blog';
 
+export default {
+  name : 'App',
+  data() {
+    return {
+      블로그글: blog,
+    }
+  },
+  components : {
+    
+  },
+  
 }
 </script>
 
